@@ -1,59 +1,95 @@
-# MongoDB Fundamentals - Week 1
+# 📚 PLP Bookstore – MongoDB Assignment (Week 1)
 
-## Setup Instructions
+## 🚀 Objective
 
-Before you begin this assignment, please make sure you have the following installed:
+This project demonstrates the fundamentals of MongoDB, including:
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+* Creating a database and collection
+* Performing CRUD operations
+* Running advanced queries (filtering, projection, sorting, pagination)
+* Using aggregation pipelines
+* Implementing indexing for performance
 
-### Node.js Package Setup
+---
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+## 🛠️ Setup Instructions
+
+### 1. Install MongoDB
+
+Choose one of the following:
+
+* **Option A: Local** – Install [MongoDB Community Edition](https://www.mongodb.com/try/download/community)
+* **Option B: Cloud** – Create a free cluster on [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+
+### 2. Clone This Repository
 
 ```bash
-# Initialize a package.json file
-npm init -y
-
-# Install the MongoDB Node.js driver
-npm install mongodb
+git clone <your-repo-link>
+cd plp_bookstore
 ```
 
-## Assignment Overview
+### 3. Start MongoDB
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+* If installed locally:
 
-## Submission
+  ```bash
+  mongod
+  ```
+* If using Atlas: Connect with your connection string in **mongosh**.
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+### 4. Insert Sample Data
 
-## Getting Started
+Run the insert script to create the database, collection, and documents:
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+```bash
+mongosh < insert_books.js
+```
 
-## Files Included
+This will:
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+* Create a database called **plp_bookstore**
+* Create a collection called **books**
+* Insert 10 sample book documents
 
-## Requirements
+### 5. Run Queries
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+Execute all queries:
 
-## Resources
+```bash
+mongosh < queries.js
+```
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+---
+
+## 📂 Files in Repository
+
+* **insert_books.js** → Script to insert sample books into the database
+* **queries.js** → Contains all CRUD operations, advanced queries, aggregations, and indexing
+* **README.md** → This documentation file with setup and usage instructions
+* **screenshot.png** → Screenshot of MongoDB Compass/Atlas showing the `books` collection and documents
+
+---
+
+## ✅ How to Verify
+
+After running the insert script, open MongoDB Shell:
+
+```bash
+mongosh
+use plp_bookstore
+db.books.find().pretty()
+```
+
+You should see the 10 inserted book documents.
+
+---
+
+## 📸 Screenshot
+
+Add a screenshot of your MongoDB Compass or Atlas showing:
+
+* Database: **plp_bookstore**
+* Collection: **books**
+* At least a few documents
+
+Save it as **screenshot.png** in this repository.
